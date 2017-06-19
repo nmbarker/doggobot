@@ -1,0 +1,14 @@
+{
+  "name": "doggo",
+  "version": "1.0.0",
+  "description": "discordbot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "doggo"
+  },
+  "author": "Nick 'Neeks' Barker",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.1.0"
+  }
+}
