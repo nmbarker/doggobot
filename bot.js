@@ -1,7 +1,7 @@
 //constants
 const Discord = require("discord.js");
 const prefix = "!"
-const token = 'MzI2MTgwMDEyMzg4NTE1ODQx.DCjCaw.IYndOdgU18b9GgfdAtXJqDEpgm0';
+const token = 'YOUR_TOKEN_HERE';
 const ytdl = require("ytdl-core");
 
 function play(connection, message) {
