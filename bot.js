@@ -33,7 +33,7 @@ bot.on("ready", function() {
 
 bot.on("guildMemberAdd", function(member) {
 	member.guild.channels.find("name", "general").send(member.toString() + " welcome to Neek's Server!");
-	member.addRole(member.guild.roles.find("name", 'roleplayers'));
+	member.addRole(member.guild.roles.find("name", 'Roleplayers'));
 });
 
 bot.on("message", function(message) {
