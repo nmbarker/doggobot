@@ -1,7 +1,7 @@
 //constants
 const Discord = require("discord.js");
 const prefix = "!"
-const token = 'YOUR TOKEN HERE';
+const token = 'MzI2MTgwMDEyMzg4NTE1ODQx.DbeFPw.xm4UVNuxcO9TFZXwlfQh6ZHUDiY';
 const ytdl = require("ytdl-core");
 //vars
 var youtubeUrl = require('youtube-url');
@@ -28,7 +28,10 @@ var cmds = [
 	"!hi: say hi to The Brethren!",
 	"!play: play music via link.",
 	"!skip: skip current song being played to next in queue.",
-	"!stop: stop playing music."
+	"!stop: stop playing music.",
+	"!nou: No u",
+	"!initiatecount: How many times The Brethren has intiated people.",
+	"!songcount: How many songs that have been played."
 ];
 var servers = {};
 
@@ -107,6 +110,8 @@ bot.on("message", function(message) {
 		});
   		break;
 	case "initiate":
+		//Use this command at your own risk it plays the halo theme song but earrape.
+		//This command is used as an inside joke on one of my servers.
 		if (!message.member.voiceChannel) {
 			message.channel.send("Must be in a voice channel to initiate.");
 		}
@@ -142,7 +147,7 @@ bot.on("message", function(message) {
   		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
   		break;
 	case "nou":
-		message.channel.send("no u " + message.author.toString());
+		message.channel.send("no u");
 		break;
   	default:
   		message.channel.send("Unknown command, please use !help.");
