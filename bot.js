@@ -141,7 +141,7 @@ bot.on("message", function(message) {
   	case "skip":
   		var server = servers[message.guild.id];
   		if (server.dispatcher) server.dispatcher.end();
-  		break;
+		  break;
   	case "stop":
   		var server = servers[message.guild.id];
   		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
