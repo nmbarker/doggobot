@@ -1,7 +1,7 @@
 //constants
 const Discord = require("discord.js");
 const prefix = "!"
-const token = 'MzI2MTgwMDEyMzg4NTE1ODQx.DbeFPw.xm4UVNuxcO9TFZXwlfQh6ZHUDiY';
+const token = 'INSERT_TOKEN_HERE';
 const ytdl = require("ytdl-core");
 //vars
 var youtubeUrl = require('youtube-url');
@@ -248,7 +248,7 @@ bot.on("message", function(message) {
   	case "skip":
   		var server = servers[message.guild.id];
   		if (server.dispatcher) server.dispatcher.end();
-  		break;
+		  break;
   	case "stop":
   		var server = servers[message.guild.id];
   		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
