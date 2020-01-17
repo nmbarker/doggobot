@@ -38,12 +38,13 @@ var servers = {};
 
 bot.on("ready", function() {
   console.log(`Logged in as ${bot.user.tag}!`);
+  bot.user.setActivity("The Good Lord");
 });
 
 //New member intercept
 bot.on("guildMemberAdd", function(member) {
 	member.guild.channels.find("name", "the10meme-mandments").send(member.toString() + " welcome to Father Poppy's Christian Channel!");
-	member.addRole(member.guild.roles.find("name", 'Nobbies'));
+	member.addRole(member.guild.roles.find("name", 'Congregation'));
 });
 
 //! message handler
@@ -56,7 +57,7 @@ bot.on("message", function(message) {
   		message.channel.send("pong");
   		break;
   	case "help":
-  		message.channel.send("Current Commands: !help, !ping, !help_cmd, !hi, !play, !skip, !stop");
+  		message.channel.send("Current Commands: !help, !ping, !hi, !play, !skip, !stop, !initiate, !sh!t, !doods, !fuzewins, !comoestas, !blyat, !yeetmeister, !loot, !nou, !language");
   		break;
   	case "help_cmd":
   		if (args[1] == "ping") {
@@ -103,7 +104,7 @@ bot.on("message", function(message) {
   		var server = servers[message.guild.id];
   		server.queue.push(args[1]);
   		if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-  			play(connection, message);
+			play(connection, message);
   		});
 		fs.appendFile('youtubelog.txt', dateFormat(now, "isoDateTime") + " - " +  message.author.tag + ": " + args[1] + '\n', (err) => {
 			if (err) throw err;
@@ -114,6 +115,7 @@ bot.on("message", function(message) {
 		//This command is used as an inside joke on one of my servers.
 		if (!message.member.voiceChannel) {
 			message.channel.send("Must be in a voice channel to initiate.");
+			return;
 		}
 		if (!servers[message.guild.id]) servers[message.guild.id] = {
 			queue: []
@@ -127,6 +129,111 @@ bot.on("message", function(message) {
 		});
 		fs.appendFile('youtubelog.txt', dateFormat(now, "isoDateTime") + " - " + message.author.tag + ": " + song + '\n', (err) => {
 			if (err) throw err;
+		});
+		break;
+	case "sh!t":
+		if (!message.member.voiceChannel) {
+			message.channel.send("Must be in a voice channel to play.");
+			return;
+		}
+		if (!servers[message.guild.id]) servers[message.guild.id] = {
+			queue: []
+		};
+		var server = servers[message.guild.id];
+		var song = "www.youtube.com/watch?v=eCiPGi-Wv50";
+		server.queue.push(song);
+		if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+			play(connection,message);
+		});
+		break;
+	case "doods":
+		if (!message.member.voiceChannel) {
+			message.channel.send("Must be in a voice channel to play.");
+			return;
+		}
+		if (!servers[message.guild.id]) servers[message.guild.id] = {
+			queue: []
+		};
+		var server = servers[message.guild.id];
+		var song = "www.youtube.com/watch?v=IDDdJ2lAsyI";
+		server.queue.push(song);
+		if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+			play(connection,message);
+		});
+		break;
+	case "fuzewins":
+                if (!message.member.voiceChannel) {
+                        message.channel.send("Must be in a voice channel to play.");
+			return;
+                }
+                if (!servers[message.guild.id]) servers[message.guild.id] = {
+                        queue: []
+                };
+                var server = servers[message.guild.id];
+                var song = "www.youtube.com/watch?v=8WgM0ssm40o";
+                server.queue.push(song);
+                if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+                        play(connection,message);
+                });
+                break;
+	case "comoestas":
+		if (!message.member.voiceChannel) {
+                        message.channel.send("Must be in a voice channel to play.");
+			return;
+                }
+		if (!servers[message.guild.id]) servers[message.guild.id] = {
+                        queue: []
+                };
+                var server = servers[message.guild.id];
+                var song = "www.youtube.com/watch?v=uESCSkKDI_M";
+                server.queue.push(song);
+                if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+                        play(connection,message);
+                });
+                break;
+	case "blyat":
+		if (!message.member.voiceChannel) {
+			message.channel.send("Must be in a voice channel to play.");
+			return;
+		}
+		if (!servers[message.guild.id]) servers[message.guild.id] = {
+			queue: []
+		};
+		var server = servers[message.guild.id];
+		var song = "www.youtube.com/watch?v=odBDdfF9Uu0";
+		server.queue.push(song);
+		if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+			play(connection,message);
+		});
+		break;
+	case "yeetmeister":
+		if (!message.member.voiceChannel) {
+			message.channel.send("Must be in a voice channel to play.");
+			return;
+		}
+		if (!servers[message.guild.id]) servers[message.guild.id] = {
+			queue: []
+		};
+		var server = servers[message.guild.id];
+		var song = "www.youtube.com/watch?v=1Hlt6uTGgZU";
+		server.queue.push(song);
+		if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+			play(connection,message);
+		});
+		break;
+	case "loot":
+		if (!message.member.voiceChannel) {
+			message.channel.send("Must be in a voice channel to play.");
+			return;
+		}
+		if (!servers[message.guild.id]) servers[message.guild.id] = {
+			queue: []
+		};
+		var server = servers[message.guild.id];
+		var song = "www.youtube.com/watch?v=QvEhXiHuTMk";
+		server.queue.push(song);
+		if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+			play(connection,message);
 		});
 		break;
 	case "initiatecount":
@@ -148,6 +255,9 @@ bot.on("message", function(message) {
   		break;
 	case "nou":
 		message.channel.send("no u");
+		break;
+	case "language":
+		message.channel.send("English. Dumbass");
 		break;
   	default:
   		message.channel.send("Unknown command, please use !help.");
